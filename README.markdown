@@ -40,13 +40,15 @@ You may now continue configuring RVM resources.
 
 ## Install RVM with Puppet
 
-Install RVM with:
+If GPG is installed, installing RVM requires the RVM GPG key, that is installed by default
+using [`golja-gnupg`](https://forge.puppetlabs.com/golja/gnupg) module.
 
-    include rvm
-
-or
-
+    class { '::gnupg': }
     class { 'rvm': version => '1.20.12' }
+
+If you don't want this module to install the gpg key just set to false the `gpg_key_id` parameter
+
+    class { 'rvm': gnupg_key_id => false }
 
 This will install RVM into `/usr/local/rvm`.
 
