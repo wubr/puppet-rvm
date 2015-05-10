@@ -15,7 +15,7 @@
     },
     {
       "name": "golja/gnupg",
-      "version_requirement": ">=0"
+      "version_requirement": ">1.1.1"
     }
   ],
   "operatingsystem_support": [
