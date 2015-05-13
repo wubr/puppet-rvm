@@ -67,6 +67,7 @@ class rvm::passenger::apache(
     passenger_ruby           => "${rvm_prefix}/rvm/wrappers/${ruby_version}/ruby",
     passenger_max_pool_size  => $maxpoolsize,
     passenger_pool_idle_time => $poolidletime,
+    passenger_spawn_method   => $spawnmethod,
     mod_lib_path             => $modpath,
     mod_package_ensure       => $package_ensure,
     require                  => [ Exec['passenger-install-apache2-module'], File['passenger_module_object'], ],
